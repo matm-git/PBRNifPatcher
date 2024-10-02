@@ -9,7 +9,7 @@ Write-Host $outputFilePath
 
 # Alle Dateien mit dem Namensmuster *_n.dds finden
 #Get-ChildItem -Path $folderPath -Filter "*_n.dds" | ForEach-Object {
-Get-ChildItem -Filter "*_n.dds" | ForEach-Object {
+Get-ChildItem -Filter "*_n.dds" -Recurse | ForEach-Object {
     # Ursprünglichen Dateinamen ohne _n.dds extrahieren
     $fileName = $_.BaseName -replace '_n$',''
     
